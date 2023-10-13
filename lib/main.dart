@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+// import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import '../screens/settings_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,16 +19,16 @@ import '../provider/theme_provider.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
-AndroidNotificationChannel channel = const AndroidNotificationChannel(
+/*AndroidNotificationChannel channel = const AndroidNotificationChannel(
     'msg_channel', // id
     'High Notifications', // title
     description:
         'This channel is used for important notifications.', // description
     importance: Importance.high,
-    playSound: true);
+    playSound: true);*/
 
-final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-    FlutterLocalNotificationsPlugin();
+//final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
+  //  FlutterLocalNotificationsPlugin();
 Future main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); //when we have to communicate to flutter framework before initializing app
@@ -36,14 +36,14 @@ Future main() async {
     AdMobService.initialize();
   }
 
-  flutterLocalNotificationsPlugin
+  /*flutterLocalNotificationsPlugin
       .resolvePlatformSpecificImplementation<
           IOSFlutterLocalNotificationsPlugin>()
       ?.requestPermissions(
         alert: true,
         badge: true,
         sound: true,
-      );
+      );*/
 
   bool isNavVisible = true;
   int counter = 0;
